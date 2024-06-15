@@ -1,0 +1,272 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+// Estilos para el contenedor main
+
+
+.contenedor{
+  background-color: v.$negro;
+  text-align: center;
+  margin: auto;
+  // Grid para los tres contenedores del main
+  .principal {
+    display: grid;
+    grid-row-gap: 15px;
+
+    // Estilos para pantallas móviles
+   @include m.mobile {
+        grid-template-columns: 100%; // Solo una columna que ocupa todo el ancho
+        grid-template-rows: repeat(3, 1fr); // Tres filas iguales
+
+        .div1 {
+            grid-area: 1 / 1 / 2 / 2; // Ocupa toda la primera columna y primera fila
+            background-image: url("../IMG/coche.avif");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 75vh; // Altura de la pantalla completa
+            transform: rotate(20);
+            
+        }
+
+        .div2 {
+            grid-area: 2 / 1 / 3 / 2; // Ocupa toda la primera columna y segunda fila
+            background-color: v.$negro;
+            height: 100vh; // Altura de la pantalla completa
+
+            h2, p {
+              color: v.$naranja; // Se asume que $naranja es una variable definida previamente
+              font-family: "Audiowide", cursive;
+              text-transform: uppercase;
+          }
+
+          p{
+            margin-top: 5px;
+            margin-left: 10px;
+            margin-right: 5px;
+            font-size: 1.5rem;
+          }
+          
+        }
+
+        .div3 {
+            grid-area: 3 / 1 / 4 / 2; // Ocupa toda la primera columna y tercera fila
+            background-color: v.$negro;
+            height: 100%; // Altura de la pantalla completa
+
+            
+            
+            
+        }
+    
+}
+
+  
+
+    // Estilos para pantallas normales
+    // @include m.desktop {
+    //     grid-template-columns: repeat(3, 1fr);
+    //     grid-template-rows: repeat(3, 1fr);
+
+    //     .div1 {
+    //       grid-area: 1 / 1 / 3 / 3;
+    //       background-image: url("../IMG/coches.jpg");
+    //       background-position: center;
+    //       background-repeat: no-repeat;
+    //       background-size: cover; // Cambiado a 'cover' para cubrir completamente el área
+    //       height: 650px; // Cambiado a '100%' para que ocupe el espacio disponible
+
+        
+          
+    //   }
+      
+    //     .div2 { 
+    //       grid-area: 1 / 3 / 3 / 4;
+    //     }
+    //     .div3 {
+    //        grid-area: 3 / 1 / 4 / 4; 
+    //     }
+
+
+    // }
+  }
+}
+
+// Clases para el texto del titulo y parrafo de la clase .div2
+.large {
+  @include m.mobile {
+    font-size: 3.5rem;
+  }
+	
+  @include m.desktop {
+    font-size: 5rem;
+  }
+}
+
+
+// Clases para los inputs de la clas .div3
+
+
+// Boton
+
+.boton {
+  color: v.$negro;
+  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: 800;
+  background-color: #e67e22;
+  border: 1px solid #f39c12;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  box-shadow: 0px 6px 0px #d35400;
+  transition: all 0.1s;
+  text-decoration: none;
+}
+
+.boton:active {
+  box-shadow: 0px 2px 0px #d35400;
+  position: relative;
+  top: 2px;
+}
+
+article {
+  --img-scale: 1.001;
+  --title-color: v.$negro;
+  --link-icon-translate: -20px;
+  --link-icon-opacity: 0;
+  position: relative;
+  border-radius: 16px;
+  box-shadow: none;
+  background: #fff;
+  transform-origin: center;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+article a::after {
+  position: absolute;
+  inset-block: 0;
+  inset-inline: 0;
+  cursor: pointer;
+  content: "";
+}
+
+/* basic article elements styling */
+article h2 {
+  margin: 0 0 18px 0;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.9rem;
+  letter-spacing: 0.06em;
+  color: var(--title-color);
+  transition: color 0.3s ease-out;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+article img {
+  max-width: 100%;
+  transform-origin: center;
+  transform: scale(var(--img-scale));
+  transition: transform 0.4s ease-in-out;
+}
+
+.article-body {
+  padding: 24px;
+}
+
+article a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color:v.$naranja;
+}
+
+article a:focus {
+  outline: 1px dotted v.$naranja;
+}
+
+article a .icon {
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+  transform: translateX(var(--link-icon-translate));
+  opacity: var(--link-icon-opacity);
+  transition: all 0.3s;
+}
+
+/* using the has() relational pseudo selector to update our custom properties */
+article:has(:hover, :focus) {
+  --img-scale: 1.1;
+  --title-color: v.$naranja;
+  --link-icon-translate: 0;
+  --link-icon-opacity: 1;
+  box-shadow: v.$naranja 0px 10px 36px 0px, v.$naranja 0px 0px 0px 1px;
+}
+
+
+/************************ 
+Generic layout (demo looks)
+**************************/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+.articles {
+  display: grid;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+@media screen and (max-width: 960px) {
+  article {
+    container: card/inline-size;
+  }
+  .article-body p {
+    display: none;
+  }
+}
+
+@container card (min-width: 380px) {
+  .article-wrapper {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+  }
+  .article-body {
+    padding-left: 0;
+  }
+  figure {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  figure img {
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}

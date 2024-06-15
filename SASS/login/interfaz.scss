@@ -1,0 +1,51 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+body{
+    background-color: v.$negro!important;
+    height: 120vh;
+}
+.login {
+    background-color: v.$negro!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a{
+        color: v.$naranja;
+    }
+    .card {
+        border-radius: 10px;
+    
+      }
+      
+      .card-title {
+        margin-bottom: 20px;
+      }
+      
+      .form-group label {
+        font-weight: bold;
+      }
+      
+      .form-check-input {
+        margin-top: 0.3rem;
+      }
+      
+      .btn-primary {
+        border-radius: 20px;
+      }
+    
+      .btn-naranja{
+        color:v.$blanco;
+        background-color:v.$naranja;
+        border-color:v.$naranja;
+        border-radius: v.$naranja;
+    
+        &:hover{
+            color: v.$blanco;
+            background-color:v.$naranja;
+        }
+    }
+      
+  }
+  

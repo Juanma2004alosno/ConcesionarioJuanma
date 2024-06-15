@@ -1,0 +1,41 @@
+body {
+  background-color: #000 !important;
+  height: 120vh;
+}
+
+.login {
+  background-color: #000 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login a {
+  color: #ff6a1b;
+}
+.login .card {
+  border-radius: 10px;
+}
+.login .card-title {
+  margin-bottom: 20px;
+}
+.login .form-group label {
+  font-weight: bold;
+}
+.login .form-check-input {
+  margin-top: 0.3rem;
+}
+.login .btn-primary {
+  border-radius: 20px;
+}
+.login .btn-naranja {
+  color: #f9f9f9;
+  background-color: #ff6a1b;
+  border-color: #ff6a1b;
+  border-radius: #ff6a1b;
+}
+.login .btn-naranja:hover {
+  color: #f9f9f9;
+  background-color: #ff6a1b;
+}
+
+/*# sourceMappingURL=interfaz.css.map */

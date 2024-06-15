@@ -1,0 +1,28 @@
+@use '../../bootstrap/scss/variables' as vb;
+// Variables
+
+// COLORES
+
+$marron: vb.$marron;
+$marron_claro: vb.$marronClaro;
+$azul: vb.$blue;
+$azul_claro: vb.$azulClaro;
+$blanco: vb.$white;
+$negro: vb.$black;
+$naranja: vb.$orange;
+
+// RUENTES
+
+$fuente_principal: italic;
+$anchura_principal: bolder;
+
+// SEPARATION
+$separacion: 5rem;
+$radio: 10px;
+
+// MEDIA QUERIES
+
+$small: 340px;
+$medium: 923px;
+$big: 1024px;
+

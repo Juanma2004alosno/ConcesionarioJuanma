@@ -1,0 +1,55 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+
+body {
+    font-family: v.$fuente_principal;
+    font-size: 2rem;
+}
+
+//Textos
+p {
+    color: v.$negro;
+    font-size: 1.5rem;
+}
+
+h1, h2, h3 {
+    margin: 0 0 v.$separacion 0;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.6rem;
+    
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+hr{
+    height: 2px;
+    background-color: v.$azul;
+}
+
+
+
+.texto_naranja{
+
+
+    color:v.$naranja!important;
+}
+
